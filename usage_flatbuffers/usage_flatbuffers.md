@@ -3,10 +3,13 @@
 https://github.com/google/flatbuffers
 
 ### 命令(*mac平台*)
-    ./flatc -j -b schema.fbs sample.json
+
+```
+./flatc -j -b schema.fbs sample.json
+```
 
 ### 数据结构(*sample.json*)
-
+```
     {   
         p:[
             {
@@ -16,8 +19,9 @@ https://github.com/google/flatbuffers
             ...
         ]
     }
-
+```
 ### fbs文件结构(*schema.json*)
+```
     table Person{
         id:long;
         name:string;
@@ -28,11 +32,11 @@ https://github.com/google/flatbuffers
     }
 
     root_type PersonList;
-
+```
 ### JAVA
 
 #### 生成
-
+```
     FlatBufferBuilder fbb = new FlatBufferBuilder();
     //创建Person数据
     int[] list=new int[10];
@@ -49,7 +53,8 @@ https://github.com/google/flatbuffers
     int p=PersonList.createPersonList(fbb,v);
     //结束创建
     PersonList.finishPersonListBuffer(fbb, p);
-
+```
 #### 解析
-
+```
     PersonList test=PersonList.getRootAsPersonList(fbb.dataBuffer());
+```
