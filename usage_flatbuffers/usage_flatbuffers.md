@@ -2,7 +2,7 @@
 
 https://github.com/google/flatbuffers
 
-###命令(mac平台)
+###命令(*mac平台*)
     ./flatc -j -b schema.fbs sample.json
 
 ###数据结构(*sample.json*)
@@ -33,6 +33,7 @@ https://github.com/google/flatbuffers
 ####生成
 
     FlatBufferBuilder fbb = new FlatBufferBuilder();
+    //创建Person数据
     int[] list=new int[10];
     for(int i=0;i<list.length;i++){
         int a=fbb.createString("test"+i);
@@ -41,9 +42,11 @@ https://github.com/google/flatbuffers
         Person.addName(fbb, a);
         list[i]=Person.endPerson(fbb);
     }
+    //生成数据buffer
     int v=PersonList.createPVector(fbb, list);
-
+    //创建PersonList对象
     int p=PersonList.createPersonList(fbb,v);
+    //结束创建
     PersonList.finishPersonListBuffer(fbb, p);
 
 ####解析
