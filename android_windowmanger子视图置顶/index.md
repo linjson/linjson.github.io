@@ -11,7 +11,7 @@ int size=144;
 WindowManager.LayoutParams params = new WindowManager.LayoutParams(
         WindowManager.LayoutParams.MATCH_PARENT,
         size,
-        WindowManager.LayoutParams.TYPE_SYSTEM_ALERT, // z-ordering
+        WindowManager.LayoutParams.TYPE_SYSTEM_ALERT,
         WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL | WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE,
         PixelFormat.TRANSLUCENT);
 //下一句是关键        
