@@ -24,11 +24,9 @@ task androidSourcesJar(type: Jar) {
 }
 
 //设置pom的基本属性
-def configPom(pom) {
-    pom.groupId = "com.ljs"
-    pom.artifactId = "app_con"
-    pom.version = "0.0.1"
-}
+group = 'xx.xx'
+archivesBaseName = 'xx'
+version = '1.0'
 
 
 def localRepositoryUrl = "file://本地目录"
@@ -39,7 +37,7 @@ uploadArchives {
         mavenDeployer {
             snapshotRepository(url: localRepositoryUrl)
             repository(url: localRepositoryUrl) {
-                configPom pom
+                
             }
 
         }
