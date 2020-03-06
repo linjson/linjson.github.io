@@ -1,8 +1,8 @@
 # GRPC ssl证书生成
 
 - 生成CA证书 
-    >`复制"-----BEGIN PRIVATE KEY-----"这部分的代码到"ca.key"中`
 - 1. openssl req -x509 -new -newkey rsa:1024 -nodes -out ca.pem -config ca-openssl.cnf -days 3650 -extensions v3_req
+>`在输出中复制"-----BEGIN PRIVATE KEY-----"这部分的代码到"ca.key"中`
 - 生成client证书
 - 2. openssl genrsa -out client.key.rsa 1024
 - 3. openssl pkcs8 -topk8 -in client.key.rsa -out client.key -nocrypt
