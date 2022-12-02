@@ -2,17 +2,16 @@
 
 
 ```groovy
-  jar {
+jar {
     String someString = ''
-    configurations.runtime.each { someString = someString + " lib//" + it.name }
     manifest {
-        attributes 'Main-Class': '执行主类'
-        attributes 'Class-Path': someString
+        attributes 'Main-Class': 'xx.xx'//入口类
     }
     from {
+        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
         configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
     }
-    }
+}
 
 
 ```
