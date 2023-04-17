@@ -1,0 +1,5 @@
+mkdir build
+cd build/
+cmake -DCMAKE_SYSTEM_PROCESSOR=arm64 -DCMAKE_OSX_ARCHITECTURES=arm64 -D CMAKE_BUILD_TYPE=RELEASE ..
+make -j8
+sudo make DESTDIR=指定目录 install
